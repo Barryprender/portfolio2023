@@ -10,11 +10,11 @@ import { userCardComponent } from './components/userCard/userCard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { SharedModule } from './components/shared.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    userCardComponent
+    AppComponent
   ],
   imports: [
     MaterialModule,
@@ -22,7 +22,8 @@ import { SharedModule } from './components/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    PagesModule
   ],
   providers: [PortfolioService],
   bootstrap: [AppComponent]

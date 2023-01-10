@@ -3,22 +3,26 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { userCardComponent } from './userCard/userCard.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
+    userCardComponent,
+    NavComponent
 
   ],
   imports: [
-    NavComponent,
+    NgbNavModule,
     CommonModule,
     NgbModule,
     MaterialModule,
   ],
   exports: [
     HeaderComponent,
-    NavComponent
+    NavComponent,
+    userCardComponent
   ]
 })
 
