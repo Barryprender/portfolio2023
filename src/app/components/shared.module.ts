@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserCardComponent } from './userCard/userCard.component';
 import { NavComponent } from './nav/nav.component';
+import { RouterModule } from '@angular/router';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -20,6 +21,7 @@ const COMPONENTS = [
     CommonModule,
     NgbModule,
     NgbNavModule,
+    RouterModule,
     MaterialModule,
   ],
   exports: [

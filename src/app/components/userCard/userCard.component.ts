@@ -8,7 +8,7 @@ import { ClientModel } from 'src/app/clientesModel';
   templateUrl: './userCard.component.html',
   styleUrls: ['./userCard.component.scss']
 })
-export class userCardComponent {
+export class UserCardComponent {
   public clients = new Array<ClientModel>();
   constructor(
     public portfolioService: PortfolioService,
@@ -17,8 +17,5 @@ export class userCardComponent {
       this.clients = data;
     })
   }
-
-
-
 
 }

@@ -1,8 +1,11 @@
-<ul ngbNav [(activeId)]="active" class="nav-tabs">
-  <li [ngbNavItem]="1">
-    <a ngbNavLink>First</a>
-  </li>
-  <li [ngbNavItem]="2">
-    <a ngbNavLink>Second</a>
-  </li>
-</ul>
+
+<div class="container">
+  <ul ngbNav [activeId]="route.fragment | async"
+    class="nav-tabs nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+    <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
+      <a ngbNavLink routerLink="{{link.path}}" class="nav-link text-secondary">
+        {{ link.title }}
+      </a>
+    </li>
+  </ul>
+</div>

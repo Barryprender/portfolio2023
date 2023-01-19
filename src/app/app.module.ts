@@ -4,17 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { PortfolioService } from './portfolio-service.service';
-import { userCardComponent } from './components/userCard/userCard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { SharedModule } from './components/shared.module';
 import { PagesModule } from './pages/pages.module';
+import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     MaterialModule,
@@ -23,7 +22,9 @@ import { PagesModule } from './pages/pages.module';
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
-    PagesModule
+    PagesModule,
+    NgbModule,
+    NgbNavModule
   ],
   providers: [PortfolioService],
   bootstrap: [AppComponent]
