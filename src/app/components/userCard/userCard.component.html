@@ -1,6 +1,6 @@
 <mat-slide-toggle>Toggle me!</mat-slide-toggle>
 <div class="row d-flex">
-    <div class="col-4" *ngFor="let item of clients">
+    <div class="col-12 col-md-4" *ngFor="let item of clients">
         <mat-card class="mb-3 p-2">
             <h3>{{item.nombre}}</h3>
 
@@ -12,13 +12,13 @@
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
 
-            <form class="example-form col-6">
-              <mat-form-field class="example-full-width">
+            <form class="example-form col-12">
+              <mat-form-field class="col-12">
                 <mat-label>Favorite food</mat-label>
                 <input matInput placeholder="Ex. Pizza" value="Sushi">
               </mat-form-field>
 
-              <mat-form-field class="example-full-width">
+              <mat-form-field class="col-12">
                 <mat-label>Leave a comment</mat-label>
                 <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
               </mat-form-field>
