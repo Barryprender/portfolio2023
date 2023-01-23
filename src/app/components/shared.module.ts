@@ -6,11 +6,15 @@ import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserCardComponent } from './userCard/userCard.component';
 import { NavComponent } from './nav/nav.component';
 import { RouterModule } from '@angular/router';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
 
 const COMPONENTS = [
   HeaderComponent,
   UserCardComponent,
-  NavComponent
+  NavComponent,
+  DatepickerComponent
 ];
 
 @NgModule({
@@ -23,9 +27,10 @@ const COMPONENTS = [
     NgbNavModule,
     RouterModule,
     MaterialModule,
+    MatDatepickerModule
   ],
   exports: [
-    ...COMPONENTS
+    ...COMPONENTS,
   ]
 })
 
