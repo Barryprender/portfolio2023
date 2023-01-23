@@ -10,6 +10,7 @@ import { MaterialModule } from './material.module';
 import { SharedModule } from './components/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     NgbNavModule
   ],
-  providers: [PortfolioService],
+  providers: [PortfolioService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
