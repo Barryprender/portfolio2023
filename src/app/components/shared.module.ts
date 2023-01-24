@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -27,6 +28,7 @@ const COMPONENTS = [
     NgbNavModule,
     RouterModule,
     MaterialModule,
+    FormsModule,
     MatDatepickerModule
   ],
   exports: [

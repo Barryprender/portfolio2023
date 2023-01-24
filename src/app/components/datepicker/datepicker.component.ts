@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
+import { ChangeDetectionStrategy, Component, Inject, Input, OnInit } from '@angular/core';
+import { FormControl, NgModel } from '@angular/forms';
 import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 
 @Component({
@@ -11,7 +11,11 @@ import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DatepickerComponent implements OnInit {
-
+    @Input() public custom = false;
+    @Input() public placeholder: string = 'Choose date';
+    @Input() public value: Date = new Date("Fri Dec 08 2020 07:44:57");
+    @Input() public required: boolean = false;
+    @Input() public disabled: boolean = false;
     public today = new Date();
     public formattedDate: string | null = '';
     public date = new FormControl(new Date());
@@ -19,7 +23,8 @@ export class DatepickerComponent implements OnInit {
     public serializedDate = new FormControl(new Date().toISOString());
 
     constructor(
-        private _adapter: DateAdapter<any>,
+
+        private _adapter: DateAdapter<Date>,
         @Inject(MAT_DATE_LOCALE) private _locale: string,
         private datePipe: DatePipe
     ){
