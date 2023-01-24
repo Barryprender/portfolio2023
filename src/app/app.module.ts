@@ -27,7 +27,11 @@ import { DatePipe } from '@angular/common';
     NgbModule,
     NgbNavModule
   ],
-  providers: [PortfolioService, DatePipe,{ provide: LOCALE_ID, useValue: 'es' },],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es' },
+    PortfolioService,
+    DatePipe
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
