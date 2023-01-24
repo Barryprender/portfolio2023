@@ -8,10 +8,10 @@ export class ClientModel {
   email = '';
   telefono = '';
   movil = '';
-  nacimiento = 'dd-mm-yyyy';
+  nacimiento = new Date("Fri Dec 08 2020 07:44:57");
   sedesID = 0;
-  created_at = '2022-07-11T10:48:13.734Z';
-  updated_at = '2022-07-11T10:48:13.734Z';
+  created_at = '2022-07-11';
+  updated_at = '2022-07-11';
 
   constructor(
       id: string,
@@ -23,7 +23,7 @@ export class ClientModel {
       email: string,
       telefono: string,
       movil: string,
-      nacimiento: string,
+      nacimiento: Date,
       sedesID: number,
       created_at: string,
       updated_at: string

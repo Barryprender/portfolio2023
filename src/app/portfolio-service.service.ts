@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { ClientModel } from './clientesModel';
+import { ClientModel } from './models/clientesModel';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class PortfolioService {
         email: 'maria.marzal@compusoft.com',
         telefono: '654321987',
         movil: '987321654',
-        nacimiento: '12/05/95',
+        nacimiento: new Date("Fri Dec 08 2020 07:44:57"),
         sedesID: 5,
         created_at: '2022-07-11T10:48:13.734Z',
         updated_at: '2022-07-11T10:48:13.734Z'
@@ -38,7 +38,7 @@ export class PortfolioService {
         email: 'manuelS@algomail.com',
         telefono: '654321987',
         movil: '987321654',
-        nacimiento: '12/05/95',
+        nacimiento: new Date("Fri Dec 08 2020 07:44:57"),
         sedesID: 6,
         created_at: '2022-07-11T10:48:13.734Z',
         updated_at: '2022-07-11T10:48:13.734Z'
@@ -53,7 +53,7 @@ export class PortfolioService {
         email: 'manuelS@algomail.com',
         telefono: '654321987',
         movil: '987321654',
-        nacimiento: '12/05/95',
+        nacimiento: new Date("Fri Dec 08 2020 07:44:57"),
         sedesID: 7,
         created_at: '2022-07-11T10:48:13.734Z',
         updated_at: '2022-07-11T10:48:13.734Z'
@@ -69,7 +69,7 @@ export class PortfolioService {
         email: 'Paquito@algomail.com',
         telefono: '654321987',
         movil: '987321654',
-        nacimiento: '12/05/95',
+        nacimiento:new Date("Fri Dec 08 2020 07:44:57"),
         sedesID: 8,
         created_at: '2022-07-11T10:48:13.734Z',
         updated_at: '2022-07-11T10:48:13.734Z'
@@ -84,7 +84,7 @@ export class PortfolioService {
         email: 'Paquito@algomail.com',
         telefono: '654321987',
         movil: '987321654',
-        nacimiento: '12/05/95',
+        nacimiento: new Date("Fri Dec 08 2020 07:44:57"),
         sedesID: 8,
         created_at: '2022-07-11T10:48:13.734Z',
         updated_at: '2022-07-11T10:48:13.734Z'
