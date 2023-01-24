@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/portfolio-service.service';
-import { ClientModel } from 'src/app/clientesModel';
+import { ClientModel } from 'src/app/models/clientesModel';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -10,6 +10,8 @@ import { DatePipe } from '@angular/common';
 })
 export class UserCardComponent implements OnInit {
   public clients = new Array<ClientModel>();
+  public model = ClientModel;
+  public placeholder = 'choose Date'
 
   constructor(
     public portfolioService: PortfolioService,
