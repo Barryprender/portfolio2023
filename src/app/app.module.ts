@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PortfolioService } from './portfolio-service.service';
+import { UserService } from './user-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { SharedModule } from './components/shared.module';
@@ -29,7 +29,7 @@ import { DatePipe } from '@angular/common';
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es' },
-    PortfolioService,
+    UserService,
     DatePipe
     ],
   bootstrap: [AppComponent]

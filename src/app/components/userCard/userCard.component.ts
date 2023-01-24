@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/portfolio-service.service';
+import { UserService } from 'src/app/user-service.service';
 import { ClientModel } from 'src/app/models/clientesModel';
 import { DatePipe } from '@angular/common';
 
@@ -14,9 +14,9 @@ export class UserCardComponent implements OnInit {
   public placeholder = 'choose Date'
 
   constructor(
-    public portfolioService: PortfolioService,
+    public userService: UserService,
   ){
-    this.portfolioService.currentListClientData.subscribe(data => {
+    this.userService.currentListClientData.subscribe(data => {
       this.clients = data;
     })
   }

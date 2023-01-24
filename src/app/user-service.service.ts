@@ -7,7 +7,7 @@ import { ClientModel } from './models/clientesModel';
   providedIn: 'root'
 })
 
-export class PortfolioService {
+export class UserService {
 
   public clientData = new BehaviorSubject<ClientModel>({} as ClientModel);
   currentDocumentData = this.clientData.asObservable();
