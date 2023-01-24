@@ -10,6 +10,7 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
+import { MainIntroComponent } from './main-intro/main-intro.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -20,7 +21,8 @@ const COMPONENTS = [
 
 @NgModule({
   declarations: [
-   ...COMPONENTS
+   ...COMPONENTS,
+   MainIntroComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ const COMPONENTS = [
   ],
   exports: [
     ...COMPONENTS,
+    MainIntroComponent,
   ]
 })
 
