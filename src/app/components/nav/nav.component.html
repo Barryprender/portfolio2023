@@ -1,9 +1,9 @@
 
 <div class="container">
   <ul ngbNav [activeId]="route.fragment | async"
-    class="nav-tabs nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+    class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
     <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
-      <a ngbNavLink routerLink="{{link.path}}" class="nav-link text-secondary">
+      <a ngbNavLink routerLink="{{link.path}}" class="nav-link white">
         {{ link.title }}
       </a>
     </li>
