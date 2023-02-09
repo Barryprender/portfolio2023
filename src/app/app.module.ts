@@ -11,6 +11,8 @@ import { SharedModule } from './components/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatePipe } from '@angular/common';
+import { SkillsService } from './services/skills-service.service';
+import { ExperienceService } from './services/experience-service.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { DatePipe } from '@angular/common';
   providers: [
     { provide: LOCALE_ID, useValue: 'es' },
     UserService,
+    SkillsService,
+    ExperienceService,
     DatePipe
     ],
   bootstrap: [AppComponent]
