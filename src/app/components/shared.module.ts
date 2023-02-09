@@ -12,19 +12,22 @@ import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { MainIntroComponent } from './main-intro/main-intro.component';
 import { SkillsComponent } from './skills/skills.component';
+import { ExperienceComponent } from './experience/experience.component';
 
 const COMPONENTS = [
   HeaderComponent,
   UserCardComponent,
   NavComponent,
   DatepickerComponent,
-  SkillsComponent
+  SkillsComponent,
+  ExperienceComponent
 ];
 
 @NgModule({
   declarations: [
    ...COMPONENTS,
-   MainIntroComponent
+   MainIntroComponent,
+   ExperienceComponent
   ],
   imports: [
     CommonModule,
