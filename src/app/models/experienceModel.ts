@@ -1,45 +1,29 @@
+import { ArrayType } from "@angular/compiler";
+
 export class ExperienceModel {
-  id = '';
-  nombre = '';
-  apellidos = '';
-  poblacion = '';
-  provincia = '';
-  documento = '';
-  email = '';
-  telefono = '';
-  movil = '';
-  nacimiento = new Date("Fri Dec 08 2020 07:44:57");
-  sedesID = 0;
-  created_at = '2022-07-11';
-  updated_at = '2022-07-11';
+  title = '';
+  link = '';
+  startDate = '';
+  finishDate = '';
+  position = '';
+  skills = ['',''];
+  description = '';
 
   constructor(
-      id: string,
-      nombre: string,
-      apellidos: string,
-      poblacion: string,
-      provincia: string,
-      documento: string,
-      email: string,
-      telefono: string,
-      movil: string,
-      nacimiento: Date,
-      sedesID: number,
-      created_at: string,
-      updated_at: string
+      title: string,
+      link: string,
+      startDate: string,
+      finishDate: string,
+      position: string,
+      skills: Array<string>,
+      description: string,
       ) {
-    this.id = id;
-    this.nombre = nombre
-    this.apellidos = apellidos
-    this.poblacion = poblacion
-    this.provincia = provincia
-    this.documento = documento
-    this.email = email
-    this.telefono = telefono
-    this.movil = movil
-    this.nacimiento = nacimiento ;
-    this.sedesID = sedesID;
-    this.created_at = created_at;
-    this.updated_at = updated_at;
+    this.title = title;
+    this.link = link
+    this.startDate = startDate
+    this.finishDate = finishDate
+    this.position = position
+    this.skills = skills
+    this.description = description
   }
 }

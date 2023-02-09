@@ -13,82 +13,60 @@ export class ExperienceService {
   currentDocumentData = this.experienceData.asObservable();
   private experienceListData = new BehaviorSubject<ExperienceModel[]>(
     new Array<ExperienceModel>(
-      {
-        id: '1',
-        nombre: 'Maria',
-        apellidos: 'Marzal',
-        poblacion: 'Madrid',
-        provincia: 'Madrid',
-        documento: 'f8654723L',
-        email: 'maria.marzal@compusoft.com',
-        telefono: '654321987',
-        movil: '987321654',
-        nacimiento: new Date("Fri Dec 08 2020 07:44:57"),
-        sedesID: 5,
-        created_at: '2022-07-11T10:48:13.734Z',
-        updated_at: '2022-07-11T10:48:13.734Z'
-      },
-      {
-        id: '2',
-        nombre: 'Manuel',
-        apellidos: 'Sanchez Sanchez',
-        poblacion: 'Madrid',
-        provincia: 'Madrid',
-        documento: 'f8654723L',
-        email: 'manuelS@algomail.com',
-        telefono: '654321987',
-        movil: '987321654',
-        nacimiento: new Date("Fri Dec 08 2020 07:44:57"),
-        sedesID: 6,
-        created_at: '2022-07-11T10:48:13.734Z',
-        updated_at: '2022-07-11T10:48:13.734Z'
-      },
-      {
-        id: '3',
-        nombre: 'Juan Pablo',
-        apellidos: 'Blanco',
-        poblacion: 'Madrid',
-        provincia: 'Madrid',
-        documento: 'f8654723L',
-        email: 'manuelS@algomail.com',
-        telefono: '654321987',
-        movil: '987321654',
-        nacimiento: new Date("Fri Dec 08 2020 07:44:57"),
-        sedesID: 7,
-        created_at: '2022-07-11T10:48:13.734Z',
-        updated_at: '2022-07-11T10:48:13.734Z'
-
-      },
-      {
-        id: '4',
-        nombre: 'Juan Pablo',
-        apellidos: 'el Cabron',
-        poblacion: 'Madrid',
-        provincia: 'Madrid',
-        documento: 'f8654723L',
-        email: 'Paquito@algomail.com',
-        telefono: '654321987',
-        movil: '987321654',
-        nacimiento:new Date("Fri Dec 08 2020 07:44:57"),
-        sedesID: 8,
-        created_at: '2022-07-11T10:48:13.734Z',
-        updated_at: '2022-07-11T10:48:13.734Z'
-      },
-      {
-        id: '5',
-        nombre: 'Titulo Documento',
-        apellidos: 'Documento',
-        poblacion: 'Madrid',
-        provincia: 'Madrid',
-        documento: 'f8654723L',
-        email: 'Paquito@algomail.com',
-        telefono: '654321987',
-        movil: '987321654',
-        nacimiento: new Date("Fri Dec 08 2020 07:44:57"),
-        sedesID: 8,
-        created_at: '2022-07-11T10:48:13.734Z',
-        updated_at: '2022-07-11T10:48:13.734Z'
-      }
+     {
+        title: 'Arcmedia',
+        link : 'www.arcmedia.ch',
+        startDate : 'July 2017',
+        finishDate : 'July 2019',
+        position : 'Front End Developer',
+        skills : ['HTML5', 'CSS', 'jQuery', 'Magento'],
+        description : 'Code layouts from designer (psd) in HTML 5, CSS 3 and jquery. As the only front end developer I had to handle all the front end issues and modificaciones. The project is built on the Yii php CMV framework as well as bootstrap css framework and managed through GitHub VCS'
+     },
+     {
+        title: 'Tessi Graddo II',
+        link : 'www.tessi.eu/es',
+        startDate : 'March 2016',
+        finishDate : 'July 2017',
+        position : 'Front End Developer',
+        skills : ['HTML5', 'CSS/LESS', 'jQuery', ],
+        description : 'Front End Developer HTML5, CSS3/LESS, Jquery. Code layouts for web applications  and  mobile devices/Responsive Design with HTML5, CSS3/LESS y Jquery. Mainly on the Keepunto.com project. Working with frameworks like Bootstrap, Yii PHP Framework. GitVCS'
+     },
+     {
+        title: 'CECA Bank',
+        link : 'www.ceca.es',
+        startDate : 'April 2015',
+        finishDate : 'March 2016',
+        position : 'Front End Developer',
+        skills : ['HTML5', 'CSS3/LESS', 'jQuery'],
+        description : 'Code layouts for web applications  and  mobile devices/Responsive Design with HTML5, CSS3/LESS y Jquery. Mainly on the Keepunto.com project. Working with frameworks like Bootstrap, Yii PHP Framework. GitVCS'
+     },
+     {
+        title: 'Vivocom',
+        link : 'www.vivocom.eu',
+        startDate : 'September 2014',
+        finishDate : 'March 2015',
+        position : 'Front End Developer',
+        skills : ['HTML5', 'CSS3/LESS', 'jQuery'],
+        description : 'Front End Developer HTML5, CSS3/LESS, Jquery. Code layouts for web applications  and  mobile devices/Responsive Design with HTML5, CSS3/LESS y Jquery. Mainly on the Keepunto.com project. Working with frameworks like Bootstrap, Yii PHP Framework. GitVCS.'
+     },
+     {
+        title: 'Vocento',
+        link : 'www.vocento.com',
+        startDate : 'September 2014',
+        finishDate : 'March 2015',
+        position : 'Front End Developer',
+        skills : ['HTML5', 'CSS3/LESS', 'jQuery'],
+        description : 'Front End Developer HTML5, CSS3/LESS, Jquery. Collaborating in two of the media groups’ web projects, GUAPABOX and  ABC FOTO. Part of the team of 3 front end developers working on the general redesign of the groups 11 regional news websites.'
+     },
+     {
+        title: 'Grupo Mercantis',
+        link : 'www.grupomercantis.com',
+        startDate : 'May 2008',
+        finishDate : 'November 2011',
+        position : 'Front End Developer',
+        skills : ['HTML5', 'CSS3/LESS', 'jQuery'],
+        description : 'HTML, CSS, Wordpress, Oscommerce, phpbb. Web editing and maintenance work in a team of web developers and programmers. Localization Work: Adapting websites en 12 languages  editing html/css, flash  (texts, images, animations) flash banners, image editing.'
+     },
     )
   );
   currentListExperienceData = this.experienceListData.asObservable();

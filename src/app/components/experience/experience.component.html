@@ -1,11 +1,14 @@
-<div>
-    <h4 >Tessi Graddo II
+<div *ngFor="let item of experiences">
+    <h4 >{{item.title}}
         <small>
-            <a href="http:www.tessi.eu/es" target="_blank">www.tessi.eu/es</a>
+            <a href="{{item.link}}" target="_blank">{{item.link}}</a>
         </small>
     </h4>
-    <p>March 2016 - July 2017</p>
-    <p>Front End Developer HTML5, CSS3/LESS, Jquery. Code layouts for web applications  and  mobile devices/Responsive Design with HTML5, CSS3/LESS y Jquery. Mainly on the Keepunto.com project. Working with frameworks like Bootstrap, Yii PHP Framework. GitVCS.</p><!-- end ngRepeat: para in empresa.description -->
+    <p><span>{{item.startDate}}</span> - <span>{{item.finishDate}}</span></p>
+
+        <h4>{{item.position}}</h4>
+        <p>HTML5, CSS3/LESS, Jquery. Code layouts for web applications  and  mobile devices/Responsive Design with HTML5, CSS3/LESS y Jquery. Mainly on the Keepunto.com project. Working with frameworks like Bootstrap, Yii PHP Framework. GitVCS.
+    </p>
     <small class="text-right showBtn">
         <span>hide examples</span>
     </small>

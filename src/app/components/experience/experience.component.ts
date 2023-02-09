@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ExperienceModel } from 'src/app/models/experienceModel';
+import { ExperienceService } from 'src/app/services/experience-service.service';
 
 @Component({
   selector: 'app-experience',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
+    public experiences = new Array<ExperienceModel>();
+    public model = ExperienceModel;
 
+    constructor(
+        public experienceService: ExperienceService,
+      ){
+        this.experienceService.currentListExperienceData.subscribe(data => {
+          this.experiences = data;
+        })
+      }
 }
