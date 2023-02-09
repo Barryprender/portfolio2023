@@ -11,12 +11,14 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { MainIntroComponent } from './main-intro/main-intro.component';
+import { SkillsComponent } from './skills/skills.component';
 
 const COMPONENTS = [
   HeaderComponent,
   UserCardComponent,
   NavComponent,
-  DatepickerComponent
+  DatepickerComponent,
+  SkillsComponent
 ];
 
 @NgModule({

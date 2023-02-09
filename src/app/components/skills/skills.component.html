@@ -1,0 +1,13 @@
+<!-- <ul>
+    <li>{{skill.skill}}</li>
+</ul> -->
+<mat-list role="list">
+    <div class="grid" style="--bs-columns: 12">
+        <div *ngFor="let skill of skills" class="g-col-6">
+            <mat-list-item role="listitem">
+                <mat-icon matListItemIcon>folder</mat-icon>
+                <div matListItemTitle>{{skill.skill}}</div>
+            </mat-list-item>
+        </div>
+    </div>
+</mat-list>
