@@ -9,7 +9,12 @@ import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class NavComponent {
   public active = 1;
+  public menuState: boolean = false;
   // public fragment = this.Fragment
+
+  public MenuButton(){
+    this.menuState = !this.menuState;
+  };
 
   links = [
     { title: 'home', fragment: 'home', path: 'home' },

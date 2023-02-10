@@ -1,11 +1,15 @@
-
 <div class="container">
-  <ul ngbNav [activeId]="route.fragment | async"
-    class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-    <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
-      <a ngbNavLink routerLink="{{link.path}}" class="nav-link white">
-        {{ link.title }}
-      </a>
-    </li>
-  </ul>
+    <!-- <div class="mobil-nav ">
+        <mat-icon aria-hidden="false" aria-label="Mobil nav" fontIcon="menu" (click)="MenuButton()"></mat-icon>
+    </div> -->
+    <ul
+        [ngClass]="menuState ? 'closed' : 'open'"
+        ngbNav [activeId]="route.fragment | async"
+        class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+        <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
+            <a ngbNavLink routerLink="{{link.path}}" class="nav-link white">
+                {{ link.title }}
+            </a>
+        </li>
+    </ul>
 </div>
