@@ -46,6 +46,12 @@ $portfolio2023-theme: mat.define-light-theme((
 // @layer base {
   html, body {
     font-family: 'Poppins', sans-serif;
+    font-size: max(1rem, 1.3vw);
+  }
+  .title {
+    font-size: max(1.5rem, .5vw);
+    padding: 1.5rem;
+    background: #eee;
   }
 // }
 
