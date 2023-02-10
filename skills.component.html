@@ -3,11 +3,11 @@
 </ul> -->
 <mat-list role="list">
     <div class="skills-grid" >
-        <mat-card *ngFor="let skill of skills" class="skill">
+        <div *ngFor="let skill of skills" class="g-col-6">
             <mat-list-item role="listitem">
                 <mat-icon matListItemIcon>folder</mat-icon>
                 <div matListItemTitle>{{skill.skill}}</div>
             </mat-list-item>
-        </mat-card>
+        </div>
     </div>
 </mat-list>

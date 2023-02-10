@@ -1,0 +1,30 @@
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 400px) );
+    grid-template-rows: auto;
+    gap: 1rem;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+.skill {
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fill-available;
+}
+
+.mat-mdc-list-item {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .mat-icon {
+        margin: 0;
+    }
+}
