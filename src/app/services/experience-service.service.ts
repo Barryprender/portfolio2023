@@ -73,7 +73,7 @@ export class ExperienceService {
   // public experience[]: any[];
 
   public Getexperience(data: ExperienceModel[]) {
-    this.httpClient.get('/api/clients').subscribe(data => {
+    this.httpClient.get('/api/exoerience').subscribe(data => {
       // this.clients = data;
       console.log(data)
     });
