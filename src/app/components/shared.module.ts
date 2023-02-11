@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { MainIntroComponent } from './main-intro/main-intro.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ExperienceComponent } from './experience/experience.component';
+import { EducationComponent } from './education/education.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -20,7 +21,8 @@ const COMPONENTS = [
   NavComponent,
   DatepickerComponent,
   SkillsComponent,
-  ExperienceComponent
+  ExperienceComponent,
+  EducationComponent
 ];
 
 @NgModule({
