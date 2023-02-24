@@ -1,4 +1,5 @@
 
+@use 'scss/reset';
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
@@ -39,19 +40,21 @@ $portfolio2023-theme: mat.define-light-theme((
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
-@import 'scss/color-overrides';
+// @import 'bootstrap/scss/bootstrap';
+// @import 'scss/color-overrides';
 
 
-// @layer base {
-  html, body {
+
+html, body {
     font-family: 'Poppins', sans-serif;
     font-size: max(1rem, 1vw);
-  }
-  .title {
+    padding: 0;
+    margin: 0;
+}
+
+h3.title {
     font-size: max(1.2rem, .5vw);
     padding: 1.5rem;
     background: #eee;
-  }
-// }
+}
 
