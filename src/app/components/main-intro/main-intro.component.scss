@@ -1,12 +1,28 @@
 .intro-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     max-width: 80vw;
     margin: 0 auto;
+
+    @media screen and (min-width: 850px) {
+        flex-direction: row;
+    }
 }
 
 .img-container {
-    max-width: 16rem;
+    width: min(100vw, 500px);
+    margin-inline-end: 1.5rem;
+
+    @media screen and (min-width: 850px) {
+        min-width: min(500px, 30vw);
+    }
 
     img {
         border-radius: .4rem;
     }
+}
+
+.intro-text {
+
 }
