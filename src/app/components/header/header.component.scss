@@ -1,5 +1,7 @@
 header {
     display: block;
+    background-color: var(--black);
+    color: var(--white);
     width: 100%;
     padding: 1rem;
 }
@@ -8,11 +10,17 @@ h1.title {
     font-size: clamp(2.25rem, 2vw + 1.5rem, 3.25rem);
 }
 .sub-title {
-    font-size: clamp(1.25rem, 2vw + 1rem, 2.25rem);
+    font-size: clamp(1.25rem, 2vw + .5rem, 2.25rem);
 }
 .wrapper {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
+
+    @media screen and (min-width: 884px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .right {
