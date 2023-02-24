@@ -6,8 +6,8 @@
         [ngClass]="menuState ? 'closed' : 'open'"
         ngbNav [activeId]="route.fragment | async"
         class="">
-        <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
-            <a ngbNavLink routerLink="{{link.path}}" class="">
+        <li [ngbNavItem]="link.fragment" *ngFor="let link of links" class="link">
+            <a ngbNavLink routerLink="{{link.path}}" class="box">
                 {{ link.title }}
             </a>
         </li>
