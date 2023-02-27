@@ -7,6 +7,7 @@
 
     @media screen and (min-width: 850px) {
         flex-direction: row;
+        padding-block: 1rem;
     }
 }
 
@@ -25,4 +26,8 @@
 
 .intro-text {
     padding-block: 2rem;
+
+    p {
+        margin-block-end: 1rem;
+    }
 }
