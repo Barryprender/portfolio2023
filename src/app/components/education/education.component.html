@@ -1,9 +1,9 @@
-<mat-list role="list">
-    <mat-list-item *ngFor="let item of education" class="education">
-        <div>
+<ul role="list" class="education-list">
+    <li *ngFor="let item of education" class="education" role="listitem">
+        <mat-card>
             <h4>{{item.title}}</h4>
             <small><span>{{item.startDate}}</span> - <span>{{item.endDate}}</span> </small>
             <p>{{item.description}}</p>
-        </div>
-    </mat-list-item>
-</mat-list>
+        </mat-card>
+    </li>
+</ul>
