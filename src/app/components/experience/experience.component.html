@@ -8,6 +8,7 @@
         <p><span>{{item.startDate}}</span> - <span>{{item.finishDate}}</span></p>
 
             <h4>{{item.position}}</h4>
+            <p><strong *ngFor="let item of item.skills">{{item}} </strong></p>
             <p>HTML5, CSS3/LESS, Jquery. Code layouts for web applications  and  mobile devices/Responsive Design with HTML5, CSS3/LESS y Jquery. Mainly on the Keepunto.com project. Working with frameworks like Bootstrap, Yii PHP Framework. GitVCS.
         </p>
         <small class="text-right showBtn">
@@ -15,7 +16,17 @@
         </small>
         <div class="examples">
             <ul>
-
+                <li *ngFor="let item of item.examples">
+                    <h4>{{item.projectName}}</h4>
+                    <p>{{item.techStack}}</p>
+                    <p>{{item.duration}}</p>
+                    <p>{{item.desctiption}}</p>
+                    <ul>
+                        <li>
+                            <img src="" alt="">
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </mat-card>

@@ -14,6 +14,39 @@ export class ExperienceService {
   private experienceListData = new BehaviorSubject<ExperienceModel[]>(
     new Array<ExperienceModel>(
      {
+        title: 'Quality Compusoft',
+        link : 'www.qcompusoft.com',
+        actual: true,
+        startDate : 'July 2017',
+        finishDate : 'Present',
+        position : 'Front End Developer',
+        skills : ['HTML5', 'CSS', 'jQuery', 'Angular 12'],
+        description : 'Code layouts from designer (psd) in HTML 5, CSS 3 and jquery. As the only front end developer I had to handle all the front end issues and modificaciones. The project is built on the Yii php CMV framework as well as bootstrap css framework and managed through GitHub VCS',
+        examples:[
+            {
+                projectName: 'dfadsfa',
+                techStack: 'dsfsdf',
+                duration: 'dfgsf',
+                desctiption: 'dfgsdfgs',
+                images: ['sdfgsfdg']
+            },
+            {
+                projectName: 'sdfg',
+                techStack: 'sdfgs',
+                duration: 'dfgsdfg',
+                desctiption: 'sdfgs',
+                images: ['sdfg']
+            },
+            {
+                projectName: 'sdfgs',
+                techStack: 'hghghfg',
+                duration: 'fghdfgh',
+                desctiption: 'srreyerth',
+                images: ['']
+            }
+        ]
+     },
+     {
         title: 'Arcmedia',
         link : 'www.arcmedia.ch',
         startDate : 'July 2017',
@@ -29,7 +62,30 @@ export class ExperienceService {
         finishDate : 'July 2017',
         position : 'Front End Developer',
         skills : ['HTML5', 'CSS/LESS', 'jQuery', ],
-        description : 'Front End Developer HTML5, CSS3/LESS, Jquery. Code layouts for web applications  and  mobile devices/Responsive Design with HTML5, CSS3/LESS y Jquery. Mainly on the Keepunto.com project. Working with frameworks like Bootstrap, Yii PHP Framework. GitVCS'
+        description : 'Front End Developer HTML5, CSS3/LESS, Jquery. Code layouts for web applications  and  mobile devices/Responsive Design with HTML5, CSS3/LESS y Jquery. Mainly on the Keepunto.com project. Working with frameworks like Bootstrap, Yii PHP Framework. GitVCS',
+        examples:[
+            {
+                projectName: '',
+                techStack: '',
+                duration: '',
+                desctiption: '',
+                images: []
+            },
+            {
+                projectName: '',
+                techStack: '',
+                duration: '',
+                desctiption: '',
+                images: []
+            },
+            {
+                projectName: '',
+                techStack: '',
+                duration: '',
+                desctiption: '',
+                images: []
+            }
+        ]
      },
      {
         title: 'CECA Bank',
