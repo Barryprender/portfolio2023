@@ -13,6 +13,10 @@ import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatePipe } from '@angular/common';
 import { SkillsService } from './services/skills-service.service';
 import { ExperienceService } from './services/experience-service.service';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { ExperienceService } from './services/experience-service.service';
     SharedModule,
     PagesModule,
     NgbModule,
-    NgbNavModule
+    NgbNavModule,
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es' },
