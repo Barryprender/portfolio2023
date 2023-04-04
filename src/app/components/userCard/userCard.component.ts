@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user-service.service';
-import { ClientModel } from 'src/app/models/clientesModel';
+import { ClientModel } from 'src/app/models/clientesModel.model';
 import { DatePipe } from '@angular/common';
 
 @Component({

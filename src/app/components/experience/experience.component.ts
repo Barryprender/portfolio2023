@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ExperienceModel } from 'src/app/models/experienceModel';
+import { ExperienceModel } from 'src/app/models/experienceModel.model';
 import { ExperienceService } from 'src/app/services/experience-service.service';
 
 @Component({
