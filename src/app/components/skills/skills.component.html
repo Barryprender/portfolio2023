@@ -1,13 +1,25 @@
 <!-- <ul>
     <li>{{skill.skill}}</li>
 </ul> -->
-<mat-list role="list">
-    <div class="skills-grid" >
-        <mat-card *ngFor="let skill of skills" class="skill">
-            <mat-list-item role="listitem">
+<div class="skills-container">
+    <form action="" #f="ngForm" (ngSubmit)="addSkill(f)">
+        <div class="skill-input-wrapper">
+            <mat-form-field>
+                <mat-label>Add Skill</mat-label>
+                <input matInput name="skill" ngModel>
+              </mat-form-field>
+            <!-- <input type="text" name="skill" ngModel> -->
+            <button mat-raised-button type="submit" >submit</button>
+        </div>
+    </form>
+    <mat-list role="list">
+        <div class="skills-grid" >
+            <mat-card *ngFor="let skill of skills | async" class="skill">
                 <mat-icon matListItemIcon>folder</mat-icon>
                 <div matListItemTitle>{{skill.skill}}</div>
-            </mat-list-item>
-        </mat-card>
-    </div>
-</mat-list>
+                <!-- <input type="text" ngModel value="{{skill.skill}}">
+                <button mat-raised-button (click)="updateSKill(skill.id, skill.skill)">update</button> -->
+            </mat-card>
+        </div>
+    </mat-list>
+</div>

@@ -1,9 +1,20 @@
+.skills-container {
+    padding-block-end: 2rem;
+}
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max-content, 300px) );
     grid-template-rows: auto;
     gap: 1rem;
     justify-content: center;
+}
+
+.skill-input-wrapper {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 1rem;
 }
 
 .skill {
@@ -14,7 +25,9 @@
     width: stretch;
     background-color: aquamarine;
 }
-
+input {
+    border: 1px solid black;
+}
 .mat-mdc-list-item {
     padding: 0;
     display: flex;

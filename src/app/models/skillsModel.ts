@@ -1,9 +1,12 @@
 export class SkillsModel {
-  skill = ''
+    id = '';
+    skill = '';
 
-  constructor(
-      skill: string,
-      ) {
-    this.skill = skill;
-  }
+    constructor(
+        id: string,
+        skill: string,
+    ) {
+        this.id = id;
+        this.skill = skill;
+    }
 }
