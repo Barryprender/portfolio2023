@@ -16,22 +16,18 @@ import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
 
 const COMPONENTS = [
-  HeaderComponent,
-  UserCardComponent,
-  NavComponent,
-  DatepickerComponent,
-  SkillsComponent,
-  ExperienceComponent,
-  EducationComponent
+    HeaderComponent,
+    UserCardComponent,
+    NavComponent,
+    DatepickerComponent,
+    SkillsComponent,
+    ExperienceComponent,
+    EducationComponent,
+    MainIntroComponent,
+    ExperienceComponent
 ];
 
-@NgModule({
-  declarations: [
-   ...COMPONENTS,
-   MainIntroComponent,
-   ExperienceComponent
-  ],
-  imports: [
+const MODULES = [
     CommonModule,
     NgbModule,
     NgbNavModule,
@@ -39,11 +35,18 @@ const COMPONENTS = [
     MaterialModule,
     FormsModule,
     MatDatepickerModule
-  ],
-  exports: [
-    ...COMPONENTS,
-    MainIntroComponent,
-  ]
+]
+
+@NgModule({
+    declarations: [
+        ...COMPONENTS
+    ],
+    imports: [
+        ...MODULES
+    ],
+    exports: [
+        ...COMPONENTS
+    ]
 })
 
 export class SharedModule { }
