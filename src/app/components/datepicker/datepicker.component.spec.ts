@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DatepickerComponent } from './datepicker.component';
+import { MatFormField, MatHint, MatLabel } from '@angular/material/form-field';
+import { MatDatepicker, MatDatepickerToggle } from '@angular/material/datepicker';
 
 describe('DatepickerComponent', () => {
   let component: DatepickerComponent;
@@ -8,7 +10,7 @@ describe('DatepickerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DatepickerComponent ]
+      declarations: [ DatepickerComponent, MatFormField, MatLabel, MatDatepickerToggle, MatHint, MatDatepicker  ]
     })
     .compileComponents();
 

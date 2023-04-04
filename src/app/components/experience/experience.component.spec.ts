@@ -4,6 +4,8 @@ import { ExperienceModel } from 'src/app/models/experienceModel.model';
 import { By } from '@angular/platform-browser';
 import { ExperienceService } from 'src/app/services/experience-service.service';
 import { BehaviorSubject } from 'rxjs';
+import { MatCard } from '@angular/material/card';
+import { HttpClient } from '@angular/common/http';
 
 describe('ExperienceComponent', () => {
   let component: ExperienceComponent;
@@ -28,8 +30,8 @@ describe('ExperienceComponent', () => {
     };
 
     await TestBed.configureTestingModule({
-      declarations: [ ExperienceComponent ],
-      providers: [ { provide: ExperienceService, useValue: experienceStub } ]
+      declarations: [ ExperienceComponent, MatCard ],
+      providers: [ { provide: ExperienceService, useValue: experienceStub }, HttpClient ]
     })
     .compileComponents();
   });
@@ -46,7 +48,7 @@ describe('ExperienceComponent', () => {
   });
 
   it('should display experiences', () => {
-    const cardElements = fixture.debugElement.queryAll(By.css('.card'));
+    const cardElements = fixture.debugElement.queryAll(By.css('.experiences'));
     expect(cardElements.length).toEqual(component.experiences.length);
   });
 });
