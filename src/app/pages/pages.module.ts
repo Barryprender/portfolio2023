@@ -9,7 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { MaterialModule } from '../material.module';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './contact/contact.component';
-import { SkillsComponent } from './skills/skills.component';
+import { SkillsPageComponent } from './skills/skills-page.component';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { SkillsComponent } from './skills/skills.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    SkillsComponent
+    SkillsPageComponent
   ],
   imports: [
     CommonModule,
