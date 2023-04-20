@@ -17,11 +17,10 @@
             <mat-card *ngFor="let skill of skills | async" class="skill-card">
                 <mat-icon matListItemIcon>folder</mat-icon>
                 <div matListItemTitle>{{skill.skill}}</div>
-                <div class="input-icon-wrapper" *ngIf="toggle">
+                <div class="input-icon-wrapper" *ngIf="selectedSkillId === skill.id">
                     <input
                         type="text"
                         [(ngModel)]="skill.skill"
-                        value="{{skill.skill}}"
                         placeholder="{{skill.skill}}"
                         (focus)="inputFocus()"
                     >
@@ -30,7 +29,7 @@
                     </button>
                 </div>
                 <div *ngIf="editable" class="toolbar">
-                    <button mat-fab (click)="editDoc()">
+                    <button mat-fab (click)="editDoc(skill)">
                         <mat-icon>edit</mat-icon>
                     </button>
                     <button mat-fab (click)="deleteDoc(skill.id)">

@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { SkillsModel } from "src/app/models/skillsModel.model";
 import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
 import { Observable } from "rxjs";
@@ -10,32 +10,40 @@ import { NgForm } from "@angular/forms";
     styleUrls: ['./skills.component.scss']
 })
 
-export class SkillsComponent {
+export class SkillsComponent implements OnInit {
 
     @Input() editable: boolean = false;
     public isfocused: boolean = false;
+    public selectedSkillId: number = 0;
     // Observable to store the skills data
     public skills!: Observable<any>;
     // Model for the skills data
     public model: SkillsModel = {} as SkillsModel;
     public toggle: boolean = false;
 
+
     constructor(
         // Firestore instance
         private firestore: Firestore,
-        ) {
-            // Get the skills data from the database
-            this.getSkills();
-        }
+    ) {
+        // Get the skills data from the database
+        this.getSkills();
+    }
 
-        inputFocus(){
-            this.isfocused = true;
-            return this.isfocused;
-        }
+    ngOnInit(): void {
+        //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+        //Add 'implements OnInit' to the class.
+        this.editable = this.editable
+    }
 
-    public editDoc(){
-        // const docInstance = doc(this.firestore, 'Skills', id);
+    inputFocus() {
+        this.isfocused = true;
+        return this.isfocused;
+    }
+
+    public editDoc(skill: any): boolean {
         this.toggle = !this.toggle;
+        this.selectedSkillId = skill.id
         return this.toggle;
     }
 
@@ -53,21 +61,21 @@ export class SkillsComponent {
     // Get the skills data from the database
     public getSkills() {
         const collectionInstance = collection(this.firestore, 'Skills');
-        this.skills = collectionData(collectionInstance, { idField: 'id'} );
+        this.skills = collectionData(collectionInstance, { idField: 'id' });
     }
 
     // Update a skill in the database
-    public updateSKill(id: string, skill: string){
+    public updateSKill(id: string, skill: string) {
         const docInstance = doc(this.firestore, 'Skills', id);
         const updateSKill = { skill: skill }
-        updateDoc(docInstance, updateSKill).then(()=>{
+        updateDoc(docInstance, updateSKill).then(() => {
             console.log('Data updated correctly');
         }).catch((err) => {
             console.log(err);
         })
     }
 
-    public deleteDoc(id: string){
+    public deleteDoc(id: string) {
         const docInstance = doc(this.firestore, 'Skills', id);
         deleteDoc(docInstance).then(() => {
             console.log('data deleted')
@@ -75,4 +83,5 @@ export class SkillsComponent {
             console.log(err);
         })
     }
+
 }
