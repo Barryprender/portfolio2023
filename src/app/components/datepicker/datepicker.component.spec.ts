@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DatepickerComponent } from './datepicker.component';
 import { MatFormField, MatHint, MatLabel } from '@angular/material/form-field';
 import { MatDatepicker, MatDatepickerToggle } from '@angular/material/datepicker';
+import { DateAdapter } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
 
 describe('DatepickerComponent', () => {
   let component: DatepickerComponent;
@@ -10,7 +12,15 @@ describe('DatepickerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DatepickerComponent, MatFormField, MatLabel, MatDatepickerToggle, MatHint, MatDatepicker  ]
+        providers: [DateAdapter, DatePipe,],
+        declarations: [
+            DatepickerComponent,
+            MatFormField,
+            MatLabel,
+            MatDatepickerToggle,
+            MatHint,
+            MatDatepicker
+        ]
     })
     .compileComponents();
 
