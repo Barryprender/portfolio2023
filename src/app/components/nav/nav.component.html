@@ -1,13 +1,23 @@
 <div class="nav wrapper">
-    <!-- <div class="mobil-nav ">
-        <mat-icon aria-hidden="false" aria-label="Mobil nav" fontIcon="menu" (click)="MenuButton()"></mat-icon>
-    </div> -->
-    <ul
-        [ngClass]="menuState ? 'closed' : 'open'"
-        class="">
-        <li *ngFor="let link of links" class="link" role="listitem">
-            <a routerLink="{{link.path}}" class="box">
-                {{ link.title }}
+    <ul>
+        <li class="link" role="listitem">
+            <a routerLink="/home" routerLinkActive="isActive inactive" class="box">
+                Home
+            </a>
+        </li>
+        <li class="link" role="listitem">
+            <a routerLink="/about" routerLinkActive="isActive inactive" class="box">
+                About
+            </a>
+        </li>
+        <li class="link" role="listitem">
+            <a routerLink="/skills" routerLinkActive="isActive inactive" class="box">
+                Skills
+            </a>
+        </li>
+        <li class="link" role="listitem">
+            <a routerLink="/contact" routerLinkActive="isActive inactive" class="box">
+                Contact
             </a>
         </li>
     </ul>

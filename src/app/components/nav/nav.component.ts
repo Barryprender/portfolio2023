@@ -1,37 +1,21 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Route } from '@angular/router';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+    selector: 'app-nav',
+    templateUrl: './nav.component.html',
+    styleUrls: ['./nav.component.scss']
 })
-export class NavComponent {
-  public active = 1;
-  public menuState: boolean = false;
-  // public fragment = this.Fragment
+export class NavComponent implements OnInit {
+    @Input() routerLink!: boolean;
+    public active = 1;
+    public activeLink!: string;
 
-  public MenuButton(){
-    this.menuState = !this.menuState;
-  };
+    constructor (
+        public router: Router,
+        public route: ActivatedRoute,
+    ) { }
 
-  links = [
-    { title: 'home', fragment: 'home', path: 'home' },
-    { title: 'about', fragment: 'about', path: 'about' },
-    { title: 'skills', fragment: 'skills', path: 'skills' },
-    { title: 'contact', fragment: 'contact', path: 'contact' }
-  ];
-
-  constructor (
-    public route: ActivatedRoute,
-    // public Fragment: NgbNavModule
-    ) {
-      // Fragment = this.fragment;
-      this.route.params.subscribe(params => {
-        console.log(params);
-      });
-  }
-
-
+    ngOnInit(): void {
+    }
 }
