@@ -39,8 +39,6 @@ $portfolio2023-theme: mat.define-light-theme((
 // html, body { height: 100%; }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/* Importing Bootstrap SCSS file. */
-// @import 'bootstrap/scss/bootstrap';
 @import 'scss/color-overrides';
 
 
@@ -59,3 +57,11 @@ h3.title {
     background: #eee;
 }
 
+.mdc-button {
+    min-width: auto;
+}
+button.mdc-fab {
+    width: auto;
+    height: auto;
+    padding: .25rem;
+}
