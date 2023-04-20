@@ -25,11 +25,11 @@
                         placeholder="{{skill.skill}}"
                         (focus)="inputFocus()"
                     >
-                    <button class="input-icon" mat-fab (click)="updateSKill(skill.id, skill.skill)">
+                    <button *ngIf="isfocused" class="input-icon" mat-fab (click)="updateSKill(skill.id, skill.skill)">
                         <mat-icon>save</mat-icon>
                     </button>
                 </div>
-                <div class="toolbar">
+                <div *ngIf="editable" class="toolbar">
                     <button mat-fab (click)="editDoc()">
                         <mat-icon>edit</mat-icon>
                     </button>

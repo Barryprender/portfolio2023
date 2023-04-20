@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { SkillsModel } from "src/app/models/skillsModel.model";
 import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
 import { Observable } from "rxjs";
@@ -11,11 +11,13 @@ import { NgForm } from "@angular/forms";
 })
 
 export class SkillsComponent {
+
+    @Input() editable: boolean = false;
     public isfocused: boolean = false;
     // Observable to store the skills data
     public skills!: Observable<any>;
     // Model for the skills data
-    public model = [] as unknown as SkillsModel;
+    public model: SkillsModel = {} as SkillsModel;
     public toggle: boolean = false;
 
     constructor(
@@ -32,9 +34,7 @@ export class SkillsComponent {
         }
 
     public editDoc(){
-        if(this.toggle){
-            return false;
-        }
+        // const docInstance = doc(this.firestore, 'Skills', id);
         this.toggle = !this.toggle;
         return this.toggle;
     }
