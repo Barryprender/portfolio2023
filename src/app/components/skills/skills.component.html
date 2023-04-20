@@ -7,23 +7,36 @@
             <mat-form-field>
                 <mat-label>Add Skill</mat-label>
                 <input matInput name="skill" ngModel>
-              </mat-form-field>
+            </mat-form-field>
             <!-- <input type="text" name="skill" ngModel> -->
-            <button mat-raised-button type="submit" >submit</button>
+            <button mat-raised-button type="submit">submit</button>
         </div>
     </form>
     <mat-list role="list">
-        <div class="skills-grid" >
-            <mat-card *ngFor="let skill of skills | async" class="skill">
+        <div class="skills-grid">
+            <mat-card *ngFor="let skill of skills | async" class="skill-card">
                 <mat-icon matListItemIcon>folder</mat-icon>
                 <div matListItemTitle>{{skill.skill}}</div>
-                <input type="text" [(ngModel)]="skill.skill" value="{{skill.skill}}" placeholder="{{skill.skill}}">
-                <button mat-raised-button (click)="updateSKill(skill.id, skill.skill)">
-                    <mat-icon>edit</mat-icon>
-                </button>
-                <button mat-raised-button (click)="deleteDoc(skill.id)">
-                    <mat-icon>delete</mat-icon>
-                </button>
+                <div class="input-icon-wrapper" *ngIf="toggle">
+                    <input
+                        type="text"
+                        [(ngModel)]="skill.skill"
+                        value="{{skill.skill}}"
+                        placeholder="{{skill.skill}}"
+                        (focus)="inputFocus()"
+                    >
+                    <button class="input-icon" mat-fab (click)="updateSKill(skill.id, skill.skill)">
+                        <mat-icon>save</mat-icon>
+                    </button>
+                </div>
+                <div class="toolbar">
+                    <button mat-fab (click)="editDoc()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-fab (click)="deleteDoc(skill.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
             </mat-card>
         </div>
     </mat-list>

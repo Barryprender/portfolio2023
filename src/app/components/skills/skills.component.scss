@@ -1,12 +1,14 @@
 .skills-container {
     padding-block-end: 2rem;
 }
+
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max-content, 300px) );
+    grid-template-columns: repeat(auto-fill, minmax(max-content, 300px));
     grid-template-rows: auto;
     gap: 1rem;
     justify-content: center;
+    position: relative;
 }
 
 .skill-input-wrapper {
@@ -17,17 +19,23 @@
     gap: 0 1rem;
 }
 
-.skill {
+.skill-card {
     min-height: 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
     width: stretch;
-    background-color: aquamarine;
+    padding: 1.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.04);
 }
+
 input {
     border: 1px solid black;
+    border-radius: .25rem;
+    padding: .5rem 1rem;
+    width: auto;
 }
+
 .mat-mdc-list-item {
     padding: 0;
     display: flex;
@@ -37,5 +45,38 @@ input {
 
     .mat-icon {
         margin: 0;
+    }
+}
+
+.toolbar {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    display: flex;
+    gap: .25rem;
+}
+
+.input-icon-wrapper {
+    display: flex;
+
+    input {
+        &:focus,
+        &:focus-within {
+            width: 100%;
+            transition: width 200ms ease-in-out;
+
+            &+button {
+                transition: opacity 200ms, display 200ms, delay 2s;
+                display: inline-flex;
+                opacity: 1;
+                margin-inline-start: .5rem;
+            }
+        }
+    }
+
+    .input-icon {
+        min-width: 2.6rem;
+        display: none;
+        transition: opacity 200ms, display 200ms, delay 2s;
     }
 }
