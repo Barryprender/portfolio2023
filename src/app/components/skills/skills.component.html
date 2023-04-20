@@ -17,8 +17,13 @@
             <mat-card *ngFor="let skill of skills | async" class="skill">
                 <mat-icon matListItemIcon>folder</mat-icon>
                 <div matListItemTitle>{{skill.skill}}</div>
-                <!-- <input type="text" ngModel value="{{skill.skill}}">
-                <button mat-raised-button (click)="updateSKill(skill.id, skill.skill)">update</button> -->
+                <input type="text" [(ngModel)]="skill.skill" value="{{skill.skill}}" placeholder="{{skill.skill}}">
+                <button mat-raised-button (click)="updateSKill(skill.id, skill.skill)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-raised-button (click)="deleteDoc(skill.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </mat-card>
         </div>
     </mat-list>

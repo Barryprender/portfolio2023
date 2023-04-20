@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
-import { SkillsModel } from "src/app/models/skillsModel";
-import { Firestore, collection, addDoc, collectionData, doc, updateDoc } from '@angular/fire/firestore';
+import { SkillsModel } from "src/app/models/skillsModel.model";
+import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
 import { Observable } from "rxjs";
+import { NgForm } from "@angular/forms";
 
 @Component({
     selector: 'app-skills',
@@ -10,18 +11,21 @@ import { Observable } from "rxjs";
 })
 
 export class SkillsComponent {
-    // public skills = new Array<SkillsModel>();
+    // Observable to store the skills data
     public skills!: Observable<any>;
+    // Model for the skills data
     public model = [] as unknown as SkillsModel;
 
     constructor(
+        // Firestore instance
         private firestore: Firestore,
     ) {
+        // Get the skills data from the database
         this.getSkills();
     }
 
-    public addSkill(f: any) {
-        console.log(f.value)
+    // Add a skill to the database
+    public addSkill(f: NgForm) {
         const collectionInstance = collection(this.firestore, 'Skills');
         addDoc(collectionInstance, f.value).then(() => {
             console.log('Data saved correctly');
@@ -31,23 +35,16 @@ export class SkillsComponent {
             })
     }
 
+    // Get the skills data from the database
     public getSkills() {
         const collectionInstance = collection(this.firestore, 'Skills');
-        // collectionData(collectionInstance).subscribe(val => {
-        //     this.skills = val as SkillsModel[];
-        // })
         this.skills = collectionData(collectionInstance, { idField: 'id'} );
     }
 
+    // Update a skill in the database
     public updateSKill(id: string, skill: string){
         const docInstance = doc(this.firestore, 'Skills', id);
-        // const updateSKill = {
-        //     skill: this.model.skill,
-        //     id: this.model.id
-        // }
-        const updateSKill = {
-            skill: 'test skill'
-        }
+        const updateSKill = { skill: skill }
         updateDoc(docInstance, updateSKill).then(()=>{
             console.log('Data updated correctly');
         }).catch((err) => {
@@ -55,5 +52,12 @@ export class SkillsComponent {
         })
     }
 
-    public DeleteSkill(id: string){}
+    public deleteDoc(id: string){
+        const docInstance = doc(this.firestore, 'Skills', id);
+        deleteDoc(docInstance).then(() => {
+            console.log('data deleted')
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
 }
