@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { NavComponent } from './nav.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HomeComponent } from 'src/app/pages/home/home.component';
@@ -50,29 +50,7 @@ describe('NavComponent', () => {
         expect(links[3].textContent).toContain('Contact');
     });
 
-    it('should navigate to home when home link is clicked', () => {
-        const homeLink = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref))[0];
-        const href = homeLink.nativeElement.getAttribute('href');
-        expect(href).toEqual('/home');
-        homeLink.triggerEventHandler('click', null);
-        fixture.detectChanges();
-        expect(component.router.url).toBe('/home');
-        debugger
-      });
-
-      it('should navigate to about when about link is clicked', () => {
-        const aboutLink = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref))[1];
-        const href = aboutLink.nativeElement.getAttribute('href');
-        expect(href).toEqual('/about');
-        aboutLink.triggerEventHandler('click', null);
-        fixture.detectChanges();
-        expect(component.router.url).toBe('/about');
-        debugger
-      });
-
     it('should navigate to the correct routes when the links are clicked', () => {
-        const router = TestBed.inject(Router);
-        const routerSpy = spyOn(router, 'navigate');
         const links = fixture.nativeElement.querySelectorAll('a[href]');
 
         links[0].click();

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
@@ -7,14 +7,20 @@ import { ActivatedRoute, Router } from '@angular/router'
     styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-    @Input() routerLink!: boolean;
     public active = 1;
     public activeLink!: string;
 
-    constructor (
+    constructor(
         public router: Router,
         public route: ActivatedRoute,
     ) { }
+
+    public homeLink() {
+        this.router.navigate(['/home']);
+    }
+    public aboutLink() {
+        this.router.navigate(['/about']);
+    }
 
     ngOnInit(): void {
     }
