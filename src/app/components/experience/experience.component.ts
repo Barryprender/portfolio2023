@@ -12,7 +12,7 @@ export class ExperienceComponent {
     public model = ExperienceModel;
 
     constructor(
-        public experienceService: ExperienceService,
+        private experienceService: ExperienceService,
       ){
         this.experienceService.currentListExperienceData.subscribe(data => {
           this.experiences = data;
