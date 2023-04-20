@@ -7,9 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../components/shared.module';
 import { AboutComponent } from './about/about.component';
 import { MaterialModule } from '../material.module';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './contact/contact.component';
 import { SkillsPageComponent } from './skills/skills-page.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import { SkillsPageComponent } from './skills/skills-page.component';
     PagesRoutingModule,
     SharedModule,
     MaterialModule,
-    NgbNavModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
     ]
 })
 export class PagesModule { }

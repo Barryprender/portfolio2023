@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 import { HeaderComponent } from './header/header.component';
-import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
-import { UserCardComponent } from './userCard/userCard.component';
 import { NavComponent } from './nav/nav.component';
 import { RouterModule } from '@angular/router';
 import { DatepickerComponent } from './datepicker/datepicker.component';
@@ -14,27 +12,27 @@ import { MainIntroComponent } from './main-intro/main-intro.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from 'src/environments/environment';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 const COMPONENTS = [
     HeaderComponent,
-    UserCardComponent,
     NavComponent,
     DatepickerComponent,
     SkillsComponent,
     ExperienceComponent,
     EducationComponent,
     MainIntroComponent,
-    ExperienceComponent
+    ExperienceComponent,
 ];
 
 const MODULES = [
     CommonModule,
-    NgbModule,
-    NgbNavModule,
     RouterModule,
     MaterialModule,
     FormsModule,
-    MatDatepickerModule
+    MatDatepickerModule,
 ]
 
 @NgModule({
@@ -42,7 +40,9 @@ const MODULES = [
         ...COMPONENTS
     ],
     imports: [
-        ...MODULES
+        ...MODULES,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore()),
     ],
     exports: [
         ...COMPONENTS
