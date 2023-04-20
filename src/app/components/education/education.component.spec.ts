@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EducationComponent } from './education.component';
 import { MatCard } from '@angular/material/card';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('EducationComponent', () => {
   let component: EducationComponent;
@@ -9,7 +10,8 @@ describe('EducationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EducationComponent, MatCard ]
+      declarations: [ EducationComponent, MatCard ],
+      providers: [HttpClient, HttpHandler]
     })
     .compileComponents();
 
