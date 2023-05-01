@@ -15,6 +15,7 @@ import { EducationComponent } from './education/education.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from 'src/environments/environment';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 const COMPONENTS = [
     HeaderComponent,
@@ -33,6 +34,7 @@ const MODULES = [
     MaterialModule,
     FormsModule,
     MatDatepickerModule,
+    NgxSkeletonLoaderModule.forRoot()
 ]
 
 @NgModule({
