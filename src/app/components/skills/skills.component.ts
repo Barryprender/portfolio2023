@@ -10,9 +10,10 @@ import { NgForm } from "@angular/forms";
     styleUrls: ['./skills.component.scss']
 })
 
-export class SkillsComponent implements OnInit {
 
+export class SkillsComponent implements OnInit {
     @Input() editable: boolean = false;
+    public contentLoaded: boolean = false;
     public isfocused: boolean = false;
     public selectedSkillId: number = 0;
     // Observable to store the skills data
@@ -20,6 +21,7 @@ export class SkillsComponent implements OnInit {
     // Model for the skills data
     public model: SkillsModel = {} as SkillsModel;
     public toggle: boolean = false;
+    data$!: Observable<any>;
 
 
     constructor(
@@ -27,12 +29,12 @@ export class SkillsComponent implements OnInit {
         private firestore: Firestore,
     ) {
         // Get the skills data from the database
-        this.getSkills();
+
+        this.contentLoaded = false
     }
 
     ngOnInit(): void {
-        //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-        //Add 'implements OnInit' to the class.
+        this.getSkills();
         this.editable = this.editable
     }
 
@@ -65,7 +67,7 @@ export class SkillsComponent implements OnInit {
     }
 
     // Update a skill in the database
-    public updateSKill(id: string, skill: string) {
+    public updateSkill(id: string, skill: string) {
         const docInstance = doc(this.firestore, 'Skills', id);
         const updateSKill = { skill: skill }
         updateDoc(docInstance, updateSKill).then(() => {
@@ -85,3 +87,5 @@ export class SkillsComponent implements OnInit {
     }
 
 }
+
+
