@@ -2,7 +2,16 @@
     <!-- <h3>Personal Info</h3> -->
     <div class="intro-wrapper">
         <div class="img-container">
-            <figure>
+            <ngx-skeleton-loader
+                *ngIf="!contentLoaded"
+                appearance="circle"
+                [theme]="{
+                   'min-width': 'min(500px,30vw)',
+                    height: '300px',
+                    'border-radius': '10px'
+                  }"
+            ></ngx-skeleton-loader>
+            <figure *ngIf="contentLoaded">
                 <img
                     loading="lazy"
                     width="100%"
@@ -13,9 +22,21 @@
             </figure>
         </div>
         <div class="intro-text">
-           <p>Hi, I'm Barry, I am a Senior Front End Developer. I have been working on the front end of websites for many years and really enjoy it.</p>
-           <p>I love writing clean efficient code and keeping up to date with front end trends. I have more than 15 years experience working with HTML, CSS and Javascript and more recently I have added Angular to my skill set. </p>
-           <p>Creating pixel perfect responsive UX layouts and components are what I most enjoy working on as well as investigating new techniques like css grid and investigating frameworks like Veu.js, Reactjs and Angular.</p>
+            <ngx-skeleton-loader
+                *ngIf="!contentLoaded"
+                appearance="circle"
+                count="3"
+                [theme]="{
+                   'width': '500px',
+                    height: '80px',
+                    'border-radius': '4px'
+                  }"
+            ></ngx-skeleton-loader>
+            <div class="intro" *ngIf="contentLoaded">
+                <p>Hi, I'm Barry, I am a Senior Front End Developer. I have been working on the front end of websites for many years and really enjoy it.</p>
+                <p>I love writing clean efficient code and keeping up to date with front end trends. I have more than 15 years experience working with HTML, CSS and Javascript and more recently I have added Angular to my skill set. </p>
+                <p>Creating pixel perfect responsive UX layouts and components are what I most enjoy working on as well as investigating new techniques like css grid and investigating frameworks like Veu.js, Reactjs and Angular.</p>
+            </div>
         </div>
     </div>
 </div>
