@@ -58,6 +58,7 @@ input {
 
 .input-icon-wrapper {
     display: flex;
+    align-items: center;
 
     input {
         &:focus,
@@ -65,7 +66,7 @@ input {
             width: 100%;
             transition: width 200ms ease-in-out;
 
-            &+button {
+            & + mat-icon {
                 // transition: opacity 200ms, display 200ms, delay 2s;
                 display: inline-flex;
                 opacity: 1;
@@ -79,4 +80,10 @@ input {
         // display: none;
         // transition: opacity 200ms, display 200ms, delay 2s;
     }
+}
+
+.skill-logo {
+    height: 50px;
+    width: 50px;
+    text-align: center;
 }

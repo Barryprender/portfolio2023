@@ -23,29 +23,24 @@
     <mat-list role="list">
         <div class="skills-grid">
             <mat-card *ngFor="let skill of skills$ | async" #skillsCard id="skillsCard" class="skill-card">
-                <mat-icon matListItemIcon>folder</mat-icon>
+                <div class="skill-logo">
+                    <img src="../../../assets/images/skills-logos/{{skill.skill}}.svg" alt="">
+                </div>
                 <div matListItemTitle>{{skill.skill}}</div>
-                <div class="input-icon-wrapper" *ngIf="selectedSkillId === +skill.id">
+                <div class="input-icon-wrapper" *ngIf="selectedSkillId === skill.id">
                     <input
                         type="text"
                         [(ngModel)]="skill.skill"
                         placeholder="{{skill.skill}}"
                         (focus)="inputFocus()">
-                    <button
-                        *ngIf="isfocused"
-                        class="input-icon"
-                        mat-fab
-                        (click)="updateSkill(skill.id, skill.skill)">
-                        <mat-icon>save</mat-icon>
-                    </button>
+                        <mat-icon
+                            *ngIf="isfocused"
+                            (click)="updateSkill(skill.id, skill.skill)"
+                        >save</mat-icon>
                 </div>
                 <div *ngIf="editable" class="toolbar">
-                    <button mat-fab (click)="editDoc(skill)">
-                        <mat-icon>edit</mat-icon>
-                    </button>
-                    <button mat-fab (click)="deleteDoc(skill.id)">
-                        <mat-icon>delete</mat-icon>
-                    </button>
+                    <mat-icon (click)="editDoc(skill)">edit</mat-icon>
+                    <mat-icon (click)="deleteDoc(skill.id)">delete</mat-icon>
                 </div>
             </mat-card>
         </div>

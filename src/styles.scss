@@ -65,3 +65,8 @@ button.mdc-fab {
     height: auto;
     padding: .25rem;
 }
+.mat-icon {
+    &:hover {
+        cursor: pointer;
+    }
+}

@@ -16,7 +16,7 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     @Input() editable: boolean = false;
     public contentLoaded: boolean = false;
     public isfocused: boolean = false;
-    public selectedSkillId: number = 0;
+    public selectedSkillId: any = 0;
     // Observable to store the skills data
     public skills$: BehaviorSubject<SkillsModel[]> = new BehaviorSubject<SkillsModel[]>([]);
     // Model for the skills data
@@ -58,7 +58,7 @@ export class SkillsComponent implements OnInit, AfterViewInit {
 
     public editDoc(skill: any): boolean {
         this.toggle = !this.toggle;
-        this.selectedSkillId = skill.id
+        this.selectedSkillId = skill.id;
         return this.toggle;
     }
 
@@ -88,6 +88,7 @@ export class SkillsComponent implements OnInit, AfterViewInit {
         const updateSKill = { skill: skill }
         updateDoc(docInstance, updateSKill).then(() => {
             console.log('Data updated correctly');
+            this.selectedSkillId = false
         }).catch((err) => {
             console.log(err);
         })
