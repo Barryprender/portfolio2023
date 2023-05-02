@@ -8,20 +8,25 @@ import { ActivatedRoute, Router } from '@angular/router'
 })
 export class NavComponent implements OnInit {
     public active = 1;
+    public navOpen = false;
     public activeLink!: string;
+    public menuString: string = 'menu';
 
     constructor(
         public router: Router,
         public route: ActivatedRoute,
     ) { }
 
-    public homeLink() {
-        this.router.navigate(['/home']);
-    }
-    public aboutLink() {
-        this.router.navigate(['/about']);
+    ngOnInit(): void {
     }
 
-    ngOnInit(): void {
+    toggleMobileNav(){
+        this.navOpen = !this.navOpen;
+
+        if (this.menuString === 'menu_open'){
+            this.menuString = 'menu'
+        } else {
+            this.menuString = 'menu_open';
+        }
     }
 }

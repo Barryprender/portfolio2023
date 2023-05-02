@@ -1,12 +1,12 @@
-<div class="nav wrapper">
+<div class="nav wrapper" [ngClass]="navOpen ? 'open' : ''">
     <ul>
         <li class="link" role="listitem">
-            <a routerLink="/home" routerLinkActive="isActive inactive" class="box home-link">
+            <a routerLink="/home" routerLinkActive="isActive inactive" class="box">
                 Home
             </a>
         </li>
         <li class="link" role="listitem">
-            <a routerLink="/about" routerLinkActive="isActive inactive" class="box about-link">
+            <a routerLink="/about" routerLinkActive="isActive inactive" class="box">
                 About
             </a>
         </li>
@@ -21,4 +21,5 @@
             </a>
         </li>
     </ul>
+    <mat-icon (click)="toggleMobileNav()">{{menuString}}</mat-icon>
 </div>
