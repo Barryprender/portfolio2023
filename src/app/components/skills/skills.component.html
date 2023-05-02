@@ -1,5 +1,5 @@
 <div class="skills-container">
-    <form action="" #f="ngForm" (ngSubmit)="addSkill(f)">
+    <form *ngIf="editable" action="" #f="ngForm" (ngSubmit)="addSkill(f)">
         <div class="skill-input-wrapper">
             <mat-form-field>
                 <mat-label>Add Skill</mat-label>
