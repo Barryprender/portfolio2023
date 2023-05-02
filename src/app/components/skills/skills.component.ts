@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnInit, QueryList, ViewChildren, inject } from "@angular/core";
 import { SkillsModel } from "src/app/models/skillsModel.model";
-import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
-import { Observable } from "rxjs";
+import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc, DocumentData } from '@angular/fire/firestore';
+import { BehaviorSubject, Observable } from "rxjs";
 import { NgForm } from "@angular/forms";
 
 @Component({
@@ -11,31 +11,44 @@ import { NgForm } from "@angular/forms";
 })
 
 
-export class SkillsComponent implements OnInit {
+export class SkillsComponent implements OnInit, AfterViewInit {
+    @ViewChildren('skillsCard') skillsCard!: QueryList<ElementRef>;
     @Input() editable: boolean = false;
     public contentLoaded: boolean = false;
     public isfocused: boolean = false;
     public selectedSkillId: number = 0;
     // Observable to store the skills data
-    public skills!: Observable<any>;
+    public skills$: BehaviorSubject<SkillsModel[]> = new BehaviorSubject<SkillsModel[]>([]);
     // Model for the skills data
     public model: SkillsModel = {} as SkillsModel;
     public toggle: boolean = false;
-    data$!: Observable<any>;
-
 
     constructor(
         // Firestore instance
-        private firestore: Firestore,
+        // private firestore: Firestore,
+        private firestore: Firestore = inject(Firestore),
+        private cdRef: ChangeDetectorRef
     ) {
         // Get the skills data from the database
-
-        this.contentLoaded = false
+        this.getSkills();
     }
 
     ngOnInit(): void {
-        this.getSkills();
         this.editable = this.editable
+    }
+
+    ngAfterViewInit(): void {
+        this.skillsCard.changes.subscribe((elements: QueryList<ElementRef>) => {
+            if (elements.length > 0) {
+                console.log('Element has rendered');
+                this.contentLoaded = true;
+            } else {
+                console.log('Element has not rendered');
+                this.contentLoaded = false;
+            }
+            this.cdRef.detectChanges(); // Manually trigger change detection
+        });
+        this.skillsCard.notifyOnChanges();
     }
 
     inputFocus() {
@@ -54,16 +67,19 @@ export class SkillsComponent implements OnInit {
         const collectionInstance = collection(this.firestore, 'Skills');
         addDoc(collectionInstance, f.value).then(() => {
             console.log('Data saved correctly');
+        }).catch((err) => {
+            console.log(err)
         })
-            .catch((err) => {
-                console.log(err)
-            })
     }
 
     // Get the skills data from the database
     public getSkills() {
         const collectionInstance = collection(this.firestore, 'Skills');
-        this.skills = collectionData(collectionInstance, { idField: 'id' });
+        collectionData(collectionInstance, { idField: 'id' })
+            .subscribe((skills: DocumentData[]) => {
+                const skillsArray = skills.map(skill => skill as SkillsModel);
+                this.skills$.next(skillsArray);
+            })
     }
 
     // Update a skill in the database
