@@ -45,17 +45,20 @@
     }
 
     &.open {
-        ul {
-            background-color: black;
-            position: fixed;
-            inset: 0;
-            z-index: 10;
-            padding-block-start: 10rem;
+        @media screen and (max-width: 768px){
+            ul {
+                background-color: black;
+                position: fixed;
+                inset: 0;
+                z-index: 10;
+                padding-block-start: 10rem;
+            }
+
+            li {
+                display: block;
+            }
         }
 
-        li {
-            display: block;
-        }
 
     }
 }

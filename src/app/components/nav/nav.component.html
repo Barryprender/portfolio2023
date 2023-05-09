@@ -1,21 +1,21 @@
 <div class="nav wrapper" [ngClass]="navOpen ? 'open' : ''">
     <ul>
-        <li class="link" role="listitem">
+        <li class="link" role="listitem" (click)="toggleMobileNav()">
             <a routerLink="/home" routerLinkActive="isActive inactive" class="box">
                 Home
             </a>
         </li>
-        <li class="link" role="listitem">
+        <li class="link" role="listitem" (click)="toggleMobileNav()">
             <a routerLink="/about" routerLinkActive="isActive inactive" class="box">
                 About
             </a>
         </li>
-        <li class="link" role="listitem">
+        <li class="link" role="listitem" (click)="toggleMobileNav()">
             <a routerLink="/skills" routerLinkActive="isActive inactive" class="box">
                 Skills
             </a>
         </li>
-        <li class="link" role="listitem">
+        <li class="link" role="listitem" (click)="toggleMobileNav()">
             <a routerLink="/contact" routerLinkActive="isActive inactive" class="box">
                 Contact
             </a>
