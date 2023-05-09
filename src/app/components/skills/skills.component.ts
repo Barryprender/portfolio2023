@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnInit, QueryList, ViewChildren, inject } from "@angular/core";
 import { SkillsModel } from "src/app/models/skillsModel.model";
 import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc, DocumentData } from '@angular/fire/firestore';
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 import { NgForm } from "@angular/forms";
 
 @Component({
@@ -83,11 +83,22 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     }
 
     // Update a skill in the database
-    public updateSkill(id: string, skill: string) {
+    public updateSkill(id: string, skill: string,) {
         const docInstance = doc(this.firestore, 'Skills', id);
         const updateSKill = { skill: skill }
         updateDoc(docInstance, updateSKill).then(() => {
-            console.log('Data updated correctly');
+            console.log('Skill data updated correctly');
+            this.selectedSkillId = false
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
+
+    public updateDescription(id: string, description: string | undefined,) {
+        const docInstance = doc(this.firestore, 'Skills', id);
+        const updateDescription = { description: description }
+        updateDoc(docInstance, updateDescription).then(() => {
+            console.log('Description data updated correctly');
             this.selectedSkillId = false
         }).catch((err) => {
             console.log(err);

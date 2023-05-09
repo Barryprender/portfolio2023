@@ -38,6 +38,18 @@
                             (click)="updateSkill(skill.id, skill.skill)"
                         >save</mat-icon>
                 </div>
+                <p>{{skill.description}}</p>
+                <div class="input-icon-wrapper" *ngIf="selectedSkillId === skill.id">
+                    <input
+                        type="text"
+                        [(ngModel)]="skill.description"
+                        placeholder="{{skill.description}}"
+                        (focus)="inputFocus()">
+                        <mat-icon
+                            *ngIf="isfocused"
+                            (click)="updateDescription(skill.id, skill.description)"
+                        >save</mat-icon>
+                </div>
                 <div *ngIf="editable" class="toolbar">
                     <mat-icon (click)="editDoc(skill)">edit</mat-icon>
                     <mat-icon (click)="deleteDoc(skill.id)">delete</mat-icon>
