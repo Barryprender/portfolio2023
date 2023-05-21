@@ -14,6 +14,7 @@ import { NgForm } from "@angular/forms";
 export class SkillsComponent implements OnInit, AfterViewInit {
     @ViewChildren('skillsCard') skillsCard!: QueryList<ElementRef>;
     @Input() editable: boolean = false;
+    @Input() shortDescription: boolean = false;
     public contentLoaded: boolean = false;
     public isfocused: boolean = false;
     public selectedSkillId: any = 0;
@@ -22,6 +23,7 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     // Model for the skills data
     public model: SkillsModel = {} as SkillsModel;
     public toggle: boolean = false;
+    public shortDesc: string = '';
 
     constructor(
         // Firestore instance
@@ -32,7 +34,6 @@ export class SkillsComponent implements OnInit, AfterViewInit {
         // Get the skills data from the database
         this.getSkills();
     }
-
     ngOnInit(): void {
         this.editable = this.editable
     }
@@ -79,11 +80,24 @@ export class SkillsComponent implements OnInit, AfterViewInit {
             .subscribe((skills: DocumentData[]) => {
                 const skillsArray = skills.map(skill => skill as SkillsModel);
                 this.skills$.next(skillsArray);
+
+                skillsArray.forEach(skill => {
+                    if (skill.description) {
+                        const sentences = skill.description.split(/(?<=\.)\s/);
+                        this.shortDesc = sentences[0];
+                    }
+                    if (this.shortDescription) {
+                        skill.description = this.shortDesc
+                    }
+                });
             })
     }
 
     // Update a skill in the database
     public updateSkill(id: string, skill: string,) {
+        if(skill === '' || skill === undefined ){
+            return
+        }
         const docInstance = doc(this.firestore, 'Skills', id);
         const updateSKill = { skill: skill }
         updateDoc(docInstance, updateSKill).then(() => {

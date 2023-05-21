@@ -15,8 +15,9 @@
             count=4
             [theme]="{
             'width': '300px',
-                height: '120px',
-                'border-radius': '4px'
+            height: '300px',
+            'border-radius': '4px',
+            'margin': '.5rem'
             }"
         ></ngx-skeleton-loader>
     </div>
@@ -26,25 +27,28 @@
                 <div class="skill-logo">
                     <img src="../../../assets/images/skills-logos/{{skill.skill}}.svg" alt="">
                 </div>
-                <div matListItemTitle>{{skill.skill}}</div>
+                <h4 matListItemTitle>{{skill.skill}}</h4>
                 <div class="input-icon-wrapper" *ngIf="selectedSkillId === skill.id">
                     <input
                         type="text"
                         [(ngModel)]="skill.skill"
-                        placeholder="{{skill.skill}}"
+                        placeholder="skill"
                         (focus)="inputFocus()">
                         <mat-icon
                             *ngIf="isfocused"
                             (click)="updateSkill(skill.id, skill.skill)"
                         >save</mat-icon>
                 </div>
-                <p>{{skill.description}}</p>
+                <p class="description">{{skill.description}}</p>
                 <div class="input-icon-wrapper" *ngIf="selectedSkillId === skill.id">
-                    <input
-                        type="text"
-                        [(ngModel)]="skill.description"
-                        placeholder="{{skill.description}}"
-                        (focus)="inputFocus()">
+                        <textarea
+                            [ngModel]="skill.description"
+                            (focus)="inputFocus()"
+                            name=""
+                            id=""
+                            cols="30"
+                            rows="10"
+                            wrap="soft"></textarea>
                         <mat-icon
                             *ngIf="isfocused"
                             (click)="updateDescription(skill.id, skill.description)"
