@@ -1,26 +1,26 @@
-<div *ngFor="let item of experiences" class="experiences">
+<!-- <div *ngFor="let item of experiences" class="experiences"> -->
+<div *ngFor="let experience of workExperience$ | async">
     <mat-card class="experience">
-        <h4 >{{item.title}}
+        <h4 >{{experience.title}}
             <small>
-                <a href="{{item.link}}" target="_blank">{{item.link}}</a>
+                <a href="{{experience.link}}" target="_blank">{{experience.link}}</a>
             </small>
         </h4>
-        <p><span>{{item.startDate}}</span> - <span>{{item.finishDate}}</span></p>
+        <p><span>{{experience.startDate}}</span> - <span>{{experience.endDate}}</span></p>
 
-            <h4>{{item.position}}</h4>
-            <p><strong *ngFor="let item of item.skills">{{item}} </strong></p>
-            <p>HTML5, CSS3/LESS, Jquery. Code layouts for web applications  and  mobile devices/Responsive Design with HTML5, CSS3/LESS y Jquery. Mainly on the Keepunto.com project. Working with frameworks like Bootstrap, Yii PHP Framework. GitVCS.
-        </p>
+            <h4>{{experience.position}}</h4>
+            <p><strong *ngFor="let item of experience.skills">{{item}} </strong></p>
+            <p>{{experience.description}}</p>.
         <small class="text-right showBtn">
             <span>hide examples</span>
         </small>
         <div class="examples">
             <ul>
-                <li *ngFor="let item of item.examples">
-                    <h4>{{item.projectName}}</h4>
+                <li *ngFor="let item of experience.examples">
+                    <!-- <h4>{{item.projectName}}</h4>
                     <p>{{item.techStack}}</p>
                     <p>{{item.duration}}</p>
-                    <p>{{item.desctiption}}</p>
+                    <p>{{item.desctiption}}</p> -->
                     <ul>
                         <li>
                             <img src="" alt="">
