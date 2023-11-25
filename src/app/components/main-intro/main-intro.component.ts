@@ -11,6 +11,6 @@ export class MainIntroComponent implements OnInit {
     ngOnInit(): void {
         setTimeout(() => {
             this.contentLoaded = true;
-        }, 1000);
+        }, 200);
     }
 }
