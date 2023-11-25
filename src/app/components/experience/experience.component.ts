@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc, DocumentData } from '@angular/fire/firestore';
 import { BehaviorSubject } from 'rxjs';
 import { ExperienceModel } from 'src/app/models/experienceModel.model';
@@ -10,13 +10,14 @@ import { ExperienceService } from 'src/app/services/experience-service.service';
     styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
+    @Input() editable: boolean = false;
     public experiences = new Array<ExperienceModel>();
     public model = ExperienceModel;
     public workExperience$: BehaviorSubject<ExperienceModel[]> = new BehaviorSubject<ExperienceModel[]>([]);
     public shortDesc: string = '';
 
     constructor(
-        private experienceService: ExperienceService,
+        // private experienceService: ExperienceService,
         private firestore: Firestore = inject(Firestore),
     ) {
         // this.experienceService.currentListExperienceData.subscribe(data => {
