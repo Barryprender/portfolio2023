@@ -11,7 +11,16 @@ export class ExperienceModel {
     description : string;
     examples? : ExamplesModel[];
 
-    constructor (title: string, link: string, actual: boolean, startDate: string, endDate: string, position: string,skills: string[], description: string, examples?: ExamplesModel[]
+    constructor (
+        title: string,
+        link: string,
+        actual: boolean,
+        startDate: string,
+        endDate: string,
+        position: string,
+        skills: string[],
+        description: string,
+        examples?: ExamplesModel[]
     ) {
         this.title = title;
         this.link = link;
