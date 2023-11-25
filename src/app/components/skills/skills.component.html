@@ -40,6 +40,7 @@
                         >save</mat-icon>
                 </div>
                 <p class="description">{{skill.description}}</p>
+                <p>{{skill.experience}}</p>
                 <div class="input-icon-wrapper" *ngIf="selectedSkillId === skill.id">
                         <textarea
                             [ngModel]="skill.description"
