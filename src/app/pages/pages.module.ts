@@ -13,6 +13,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
+import { ExperiencePageComponent } from './experience/experience-page.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    SkillsPageComponent
+    SkillsPageComponent,
+    ExperiencePageComponent
   ],
   imports: [
     CommonModule,
